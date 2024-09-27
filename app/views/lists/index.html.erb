@@ -1,16 +1,8 @@
-
-<h1>Create new list</h1>
-<%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
-
-
+<%= link_to "Create new list", new_list_path %>
 
 <h1>Lists</h1>
 <ul>
   <% @lists.each do |list| %>
-  <li><%= list.name %></li>
+  <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
